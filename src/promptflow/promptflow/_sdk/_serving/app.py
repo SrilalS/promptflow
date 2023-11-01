@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 
 import flask
+from flask_cors import CORS
 from flask import Flask, jsonify, request, url_for
 from jinja2 import Template
 
@@ -82,7 +83,7 @@ class PromptflowServingApp(Flask):
 
 
 app = PromptflowServingApp(__name__)
-# CORS(app)
+CORS(app)
 
 
 if __name__ != "__main__":
